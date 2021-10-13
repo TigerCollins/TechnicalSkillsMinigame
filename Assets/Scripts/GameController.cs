@@ -10,7 +10,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     InputAction pauseInput;
     [SerializeField]
-    readonly int maxScoreIncrease = 50;
+    public readonly int maxScoreIncrease = 50;
 
     [Header("Player Performance")]
     [SerializeField]
