@@ -63,7 +63,6 @@ public class SceneLinker : MonoBehaviour
 
     public void TargetGameStateActivater()
     {
-        Debug.Log("hmm");
         switch (targetGameState)
         {
             case TargetGameState.normalGameplay:
