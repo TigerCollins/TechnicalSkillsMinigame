@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 
@@ -18,7 +19,7 @@ public class UIHandler : MonoBehaviour
     [SerializeField]
     List<ButtonTextVisualiser> buttonTextVisualisers;
 
-    [Header("Canvas Groups")]
+    [Header("Canvas Group Details")]
     [SerializeField]
     List<CanvasGroup> allcanvasGroups;
     [SerializeField]
@@ -32,7 +33,7 @@ public class UIHandler : MonoBehaviour
      [SerializeField]
     CanvasGroupDetails gameplayCanvasGroup;
 
-
+   
 
     //Called before start (game object does not need to be active)
     public void Awake()
@@ -215,9 +216,52 @@ public class UIHandler : MonoBehaviour
         
     }
 
-    public void StartGameInstant()
+    public void Gameplay()
     {
+        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.normalGameplay;
+    }
 
+    public void Pause()
+    {
+            SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.pauseGameplay;
+    }
+
+    public void GameOver()
+    {
+        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.gameOverGameplay;
+    }
+
+    public void Tutorial()
+    {
+        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.tutorialGameplay;
+    }
+
+    public void QuitToMenu()
+    {
+        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.mainMenu;
+    }
+
+    public void ResetGame()
+    {
+        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.normalGameplay;
+        Debug.Log("IMPLEMENT RESET FUNCTION");
+    }
+
+    //Calls the pause function, but for functionality with the new input system
+    public void PauseInput(InputAction.CallbackContext context)
+    {
+        //Stops pause menu from opening if the current game state is not regular gameplay
+        if (SceneLinker.instance.GameStateDestination == SceneLinker.TargetGameState.normalGameplay)
+        {
+            Pause();
+        }
+
+        //If on the main menu, the game will quit
+        else if(SceneLinker.instance.GameStateDestination == SceneLinker.TargetGameState.mainMenu)
+        {
+            QuitGame();
+        }
+       
     }
 
     //If the game is within the engine, the editor will stop playing but if the project is packaged, the application is closed

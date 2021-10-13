@@ -21,6 +21,8 @@ public class SceneLinker : MonoBehaviour
     [SerializeField]
     UnityEvent OnTargetGameStateChange; //Functions by programmers can be added by programmers, designers and others can add via inspector
 
+ 
+
 
     //Hidden
     TargetGameState previousTargetState;
