@@ -46,30 +46,45 @@ public class DragDrop : MonoBehaviour
         {
             target.transform.position = curPosition + pickupOffset;
         }
+
+        if(GameController.instance.IsGameComplete)
+        {
+            Drop();
+        }
        
     }
 
     public void Grab(InputAction.CallbackContext context)
     {
-        RaycastHit hitInfo;
-        target = GetClickedObject(out hitInfo);
-        if (target != null)
+        //Runs code if game is not complete
+        if(!GameController.instance.IsGameComplete)
         {
-            //Offsets item position to matrch offset
-            screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
-            target.transform.position = curPosition + pickupOffset;
+            RaycastHit hitInfo;
+            target = GetClickedObject(out hitInfo);
+            if (target != null)
+            {
+                //Offsets item position to matrch offset
+                screenSpace = Camera.main.WorldToScreenPoint(target.transform.position);
+                target.transform.position = curPosition + pickupOffset;
 
-            //Sets held items held state to tru, stopping the AddPoints function from being called
-            GameController.instance.currentItemObject.CurrentlyHeld = true;
+                //Sets held items held state to tru, stopping the AddPoints function from being called
+                GameController.instance.currentItemObject.CurrentlyHeld = true;
+            }
         }
+       
     }
 
     public void Drop(InputAction.CallbackContext context)
     {
-        if(target != null)
+        Drop();
+    }
+
+    void Drop()
+    {
+        if (target != null)
         {
             //Drops object (position)
-            target.transform.position = curPosition - (pickupOffset/dropDivider);
+            target.transform.position = curPosition - (pickupOffset / dropDivider);
 
             //Sets held items held state to false, allowing AddPoints function to be called on the ItemReceiver component
             GameController.instance.currentItemObject.CurrentlyHeld = false;
@@ -77,6 +92,7 @@ public class DragDrop : MonoBehaviour
             //Stops moving object
             target = null;
         }
+
     }
 
     GameObject GetClickedObject(out RaycastHit hit)

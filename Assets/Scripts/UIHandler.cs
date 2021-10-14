@@ -12,6 +12,7 @@ public class UIHandler : MonoBehaviour
 {
     internal static UIHandler instance;
 
+
     [SerializeField]
     internal EventSystem eventSystem;
 
@@ -57,12 +58,15 @@ public class UIHandler : MonoBehaviour
             SetMenu();
     }
 
+   
+
     public void SetMenu()
     {
         switch (SceneLinker.instance.GameStateDestination)
         {
             case SceneLinker.TargetGameState.normalGameplay:
                 Time.timeScale = 1;
+                GameController.instance.pauseTimer = false;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if(gameplayCanvasGroup != null)
@@ -83,9 +87,14 @@ public class UIHandler : MonoBehaviour
                     }
                 }
                 ChangeButtonSelection(gameplayCanvasGroup.firstButton);
-                StartCoroutine(GameController.instance.GameCountdown());
+                if(GameController.instance != null)
+                {
+                    GameController.instance.BeginCountdown();
+                }
+               
                 break;
             case SceneLinker.TargetGameState.firstTimeGameplay:
+                GameController.instance.pauseTimer = true;
                 Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -109,6 +118,7 @@ public class UIHandler : MonoBehaviour
                 ChangeButtonSelection(firstTimeCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.tutorialGameplay:
+                GameController.instance.pauseTimer = true;
                 Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -132,6 +142,7 @@ public class UIHandler : MonoBehaviour
                 ChangeButtonSelection(tutorialCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.pauseGameplay:
+                GameController.instance.pauseTimer = true;
                 Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -155,6 +166,7 @@ public class UIHandler : MonoBehaviour
                 }
                 break;
             case SceneLinker.TargetGameState.gameOverGameplay:
+                GameController.instance.pauseTimer = false;
                 Time.timeScale = 1;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {

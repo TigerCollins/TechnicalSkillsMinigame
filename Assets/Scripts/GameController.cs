@@ -1,16 +1,21 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
 
 public class GameController : MonoBehaviour
 {
     internal static GameController instance;
-
+    Coroutine countdownCoroutine;
 
     [SerializeField]
     public readonly int maxScoreIncrease = 50;
+    [SerializeField]
+    bool gameFinished;
+    [SerializeField]
+    internal bool pauseTimer;
 
     [Header("Player Performance")]
     [SerializeField]
@@ -36,6 +41,8 @@ public class GameController : MonoBehaviour
     TextMeshProUGUI timeRemainingTextBackground;
     [SerializeField]
     TextMeshProUGUI timeRemainingTextForeground;
+    [SerializeField]
+    Image timeRemainingMask;
     [SerializeField]
     Color standardColour;
     [SerializeField]
@@ -63,7 +70,16 @@ public class GameController : MonoBehaviour
     {
         SetupInput();
         SpawnItem();
-       
+
+    }
+
+    public void BeginCountdown()
+    {
+        //Stops coroutine being started ontop of itself causing unintended speeds
+        if (countdownCoroutine == null)
+        {
+            countdownCoroutine = StartCoroutine(GameCountdown());
+        }
     }
 
     void SetupInput()
@@ -139,14 +155,17 @@ public class GameController : MonoBehaviour
     {
         get
         {
-            return (int)timeRemaining;
+            return (int)Mathf.Round(timeRemaining);
         }
 
         set
         {
+            //The +1 compensates for the rounding down of the int struct
+            int newVal = value;
+
             //Set the Text string when whole number changed
-            timeRemainingTextForeground.text = value.ToString();
-            timeRemainingTextBackground.text = value.ToString();
+            timeRemainingTextForeground.text = newVal.ToString();
+            timeRemainingTextBackground.text = newVal.ToString();
         }
     }
 
@@ -167,16 +186,23 @@ public class GameController : MonoBehaviour
     internal IEnumerator GameCountdown()
     {
         float timeProgressed = 0;
+        //Pauses coroutine when bool changes
+        while (pauseTimer)
+        {
+            yield return null;
+        }
+
+        //When coroutine isn't paused and timer is above 0, run this
         while (TimeFloat > 0)
         {
             //Set the Text string
-            TimeWholeNumbers = (int)TimeFloat;
+            TimeWholeNumbers = (int)Mathf.Round(TimeFloat);
 
             //Sets the text Colour (argument needs to be whole number for switch)
             TimeRemainingTextColour(TimeWholeNumbers);
 
             //Sets the Time remaining mask fill
-
+            timeRemainingMask.fillAmount = Mathf.Round((TimeFloat / 10) * 10.0f) * 0.1f;
 
             //Sets the time (scaled with time so pausing takes affect)
             TimeFloat -= Time.deltaTime;
@@ -185,14 +211,20 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
-        //Stops the coroutine for 1/4 of a second before continuing
-        yield return new WaitForSeconds(.25f);
+
+        //Stops game (interactions for points and dragging items)
+        timeRemainingTextForeground.text = TimeWholeNumbers.ToString();
+        timeRemainingTextBackground.text = TimeWholeNumbers.ToString();
+        gameFinished = true;
+        yield return new WaitForSeconds(1f);
 
         //Once the while loop is finished, run the following
         UIHandler.instance.GameOver();
-
     }
 
+
+
+    //Only changes text colour (visual)
     void TimeRemainingTextColour(int time)
     {
         switch (time)
@@ -241,6 +273,14 @@ public class GameController : MonoBehaviour
         if(timeRemainingTextForeground.color != color)
         {
             timeRemainingTextForeground.color = color;
+        }
+    }
+
+    public bool IsGameComplete
+    {
+        get
+        {
+            return gameFinished;
         }
     }
 }
