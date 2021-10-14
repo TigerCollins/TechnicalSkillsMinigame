@@ -4928,6 +4928,11 @@ MonoBehaviour:
   - {fileID: 777882826}
   - {fileID: 1973650108}
   - {fileID: 1402013578}
+  timeRemainingTextBackground: {fileID: 2086132824}
+  timeRemainingTextForeground: {fileID: 1087225880}
+  standardColour: {r: 1, g: 1, b: 1, a: 1}
+  warningColour: {r: 1, g: 0.46028686, b: 0.07075471, a: 1}
+  iminentColour: {r: 0.9528302, g: 0.30530155, b: 0.22921856, a: 1}
   pauseInput:
     m_Name: Pause Input
     m_Type: 0

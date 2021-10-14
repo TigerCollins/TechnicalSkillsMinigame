@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using TMPro;
 
 public class GameController : MonoBehaviour
 {
     internal static GameController instance;
 
-    
+
     [SerializeField]
     public readonly int maxScoreIncrease = 50;
 
@@ -30,6 +31,18 @@ public class GameController : MonoBehaviour
     [SerializeField]
     List<Transform> itemSpawnPoints;
 
+    [Header("UI - Time")]
+    [SerializeField]
+    TextMeshProUGUI timeRemainingTextBackground;
+    [SerializeField]
+    TextMeshProUGUI timeRemainingTextForeground;
+    [SerializeField]
+    Color standardColour;
+    [SerializeField]
+    Color warningColour;
+    [SerializeField]
+    Color iminentColour;
+
     [Header("Inputs")]
     [SerializeField]
     InputAction pauseInput;
@@ -40,7 +53,7 @@ public class GameController : MonoBehaviour
 
     private void Awake()
     {
-        if(instance == null)
+        if (instance == null)
         {
             instance = this;
         }
@@ -50,6 +63,7 @@ public class GameController : MonoBehaviour
     {
         SetupInput();
         SpawnItem();
+       
     }
 
     void SetupInput()
@@ -94,7 +108,7 @@ public class GameController : MonoBehaviour
             currentItemObject = item;
         }
 
-        
+
     }
 
     protected internal int AddedScore
@@ -109,7 +123,7 @@ public class GameController : MonoBehaviour
 
             //Spawn a new item
             SpawnItem();
-           
+
         }
     }
 
@@ -121,5 +135,112 @@ public class GameController : MonoBehaviour
         }
     }
 
+    int TimeWholeNumbers
+    {
+        get
+        {
+            return (int)timeRemaining;
+        }
 
+        set
+        {
+            //Set the Text string when whole number changed
+            timeRemainingTextForeground.text = value.ToString();
+            timeRemainingTextBackground.text = value.ToString();
+        }
+    }
+
+    float TimeFloat
+    {
+        get
+        {
+            return timeRemaining;
+        }
+
+        set
+        {
+            //Clamps the time remaining from going below 0
+            timeRemaining = Mathf.Clamp(value, 0, 10);
+        }
+    }
+
+    internal IEnumerator GameCountdown()
+    {
+        float timeProgressed = 0;
+        while (TimeFloat > 0)
+        {
+            //Set the Text string
+            TimeWholeNumbers = (int)TimeFloat;
+
+            //Sets the text Colour (argument needs to be whole number for switch)
+            TimeRemainingTextColour(TimeWholeNumbers);
+
+            //Sets the Time remaining mask fill
+
+
+            //Sets the time (scaled with time so pausing takes affect)
+            TimeFloat -= Time.deltaTime;
+            timeProgressed += Time.deltaTime;
+
+            yield return null;
+        }
+
+        //Stops the coroutine for 1/4 of a second before continuing
+        yield return new WaitForSeconds(.25f);
+
+        //Once the while loop is finished, run the following
+        UIHandler.instance.GameOver();
+
+    }
+
+    void TimeRemainingTextColour(int time)
+    {
+        switch (time)
+        {
+            case 10:
+                SetTimeColour(standardColour);
+                break;
+            case 9:
+                SetTimeColour(standardColour);
+                break;
+            case 8:
+                SetTimeColour(standardColour);
+                break;
+            case 7:
+                SetTimeColour(standardColour);
+                break;
+            case 6:
+                SetTimeColour(standardColour);
+                break;
+            case 5:
+                SetTimeColour(standardColour);
+                break;
+            case 4:
+                SetTimeColour(warningColour);
+                break;
+            case 3:
+                SetTimeColour(warningColour);
+                break;
+            case 2:
+                SetTimeColour(iminentColour);
+                break;
+            case 1:
+                SetTimeColour(iminentColour);
+                break;
+            case 0:
+                SetTimeColour(iminentColour);
+                break;
+            default:
+                break;
+        }
+    }
+
+    void SetTimeColour(Color color)
+    {
+        //Minimises the canvas needing to redraw due to the colour beingt changed itself
+        if(timeRemainingTextForeground.color != color)
+        {
+            timeRemainingTextForeground.color = color;
+        }
+    }
 }

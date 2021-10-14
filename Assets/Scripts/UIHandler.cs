@@ -62,6 +62,7 @@ public class UIHandler : MonoBehaviour
         switch (SceneLinker.instance.GameStateDestination)
         {
             case SceneLinker.TargetGameState.normalGameplay:
+                Time.timeScale = 1;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if(gameplayCanvasGroup != null)
@@ -82,8 +83,10 @@ public class UIHandler : MonoBehaviour
                     }
                 }
                 ChangeButtonSelection(gameplayCanvasGroup.firstButton);
+                StartCoroutine(GameController.instance.GameCountdown());
                 break;
             case SceneLinker.TargetGameState.firstTimeGameplay:
+                Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if (firstTimeCanvasGroup != null)
@@ -106,6 +109,7 @@ public class UIHandler : MonoBehaviour
                 ChangeButtonSelection(firstTimeCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.tutorialGameplay:
+                Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if (tutorialCanvasGroup != null)
@@ -128,6 +132,7 @@ public class UIHandler : MonoBehaviour
                 ChangeButtonSelection(tutorialCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.pauseGameplay:
+                Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if (pauseCanvasGroup != null)
@@ -150,6 +155,7 @@ public class UIHandler : MonoBehaviour
                 }
                 break;
             case SceneLinker.TargetGameState.gameOverGameplay:
+                Time.timeScale = 1;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if (gameOverCanvasGroup != null)
@@ -172,6 +178,7 @@ public class UIHandler : MonoBehaviour
                 ChangeButtonSelection(gameOverCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.mainMenu:
+                Time.timeScale = 1;
                 break;
             default:
                 break;
