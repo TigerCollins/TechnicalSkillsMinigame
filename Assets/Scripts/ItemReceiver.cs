@@ -7,7 +7,7 @@ public class ItemReceiver : MonoBehaviour
     public void AddPoints(int points)
     {
         GameController.instance.AddedScore = points;
-        GameController.instance.SpawnItem();
+        GameController.instance.currentItemObject.HaveAddedToScore = true;
     }
     //Destroy item object when stays on trigger
 }
