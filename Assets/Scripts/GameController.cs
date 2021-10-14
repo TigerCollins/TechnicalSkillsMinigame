@@ -54,7 +54,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     Color warningColour;
     [SerializeField]
-    Color iminentColour;
+    Color imminentColour;
 
     [Header("UI - Score")]
     [SerializeField]
@@ -147,8 +147,6 @@ public class GameController : MonoBehaviour
             item.SetMaterial(selectedMat);
             currentItemObject = item;
         }
-
-
     }
 
     protected internal int AddedScore
@@ -163,7 +161,6 @@ public class GameController : MonoBehaviour
 
             //Spawn a new item
             SpawnItem();
-
         }
     }
 
@@ -278,13 +275,13 @@ public class GameController : MonoBehaviour
                 SetTimeColour(warningColour);
                 break;
             case 2:
-                SetTimeColour(iminentColour);
+                SetTimeColour(imminentColour);
                 break;
             case 1:
-                SetTimeColour(iminentColour);
+                SetTimeColour(imminentColour);
                 break;
             case 0:
-                SetTimeColour(iminentColour);
+                SetTimeColour(imminentColour);
                 break;
             default:
                 break;
@@ -311,23 +308,43 @@ public class GameController : MonoBehaviour
     //Updates score, called when score changes - Listener on onScoreChange UnityEvent
     void UpdateScoreVisualGameplay()
     {
-        scoreText.text = score.ToString();
+        scoreText.text = "$" + score.ToString();
     }
 
     //Updates score in the pause menu, called when score changes - Listener on onScoreChange UnityEvent
     void UpdateScoreVisualPause()
     {
-        pauseScoreText.text = pauseScoreString + " " + score.ToString();
+        pauseScoreText.text = pauseScoreString + " $" + score.ToString();
     }
 
     //Updates the entire string. Dialogue currently hardcoded.
     internal void UpdateScoreGameOver()
     {
-        gameOverText.SetText("Hmmm y'know what? Not too shabby buddy!" + "<br> You helped pack < color =#FA3029>{0}</color> items needed for the trail. Maybe " +
+        gameOverText.SetText("Hmmm y'know what? Not too shabby buddy!" + "<br><br>You helped pack a heap of supplies for the trail! You packed $<color=#FA3029>{0}</color> worth of items, what a score! Maybe " +
             "you shouldn't go on the Oregon Trail and help with the next wagon instead! ",score);
     }
 
+    public void ResetMinigame()
+    {
+        //Changes variables
+        timeRemaining = 10;
+        score = 0;
+        gameFinished = false;
+        pauseTimer = false;
 
+        //Resets timer coroutine
+        countdownCoroutine = null;
+        countdownCoroutine = StartCoroutine(GameCountdown());
+
+        //Spawn new object and destroy previous one
+        Destroy(currentItemObject.gameObject);
+        SpawnItem();
+
+        //Calls events
+        onScoreChange.Invoke();
+
+        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.normalGameplay;
+    }
 
 
 }

@@ -38,7 +38,7 @@ public class ButtonTextVisualiser : MonoBehaviour
     private void Start()
     {
         NullCheck();
-        SelectionCheck();
+        //SelectionCheck();
     }
 
     void NullCheck()

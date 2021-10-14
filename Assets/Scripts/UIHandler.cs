@@ -261,11 +261,6 @@ public class UIHandler : MonoBehaviour
         SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.mainMenu;
     }
 
-    public void ResetGame()
-    {
-        SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.normalGameplay;
-        Debug.Log("IMPLEMENT RESET FUNCTION");
-    }
 
     //Calls the pause function, but for functionality with the new input system
     public void PauseInput(InputAction.CallbackContext context)

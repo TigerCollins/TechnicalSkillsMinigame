@@ -559,11 +559,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnLeft: {fileID: 590214077}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
   m_Colors:
@@ -2507,7 +2507,7 @@ GameObject:
   - component: {fileID: 590214076}
   - component: {fileID: 590214075}
   m_Layer: 0
-  m_Name: Continue
+  m_Name: Reset
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2671,12 +2671,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 122485243}
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -2702,9 +2702,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1021460994}
-        m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: ResetGame
+      - m_Target: {fileID: 1021460996}
+        m_TargetAssemblyTypeName: GameController, Assembly-CSharp
+        m_MethodName: ResetMinigame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3804,11 +3804,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1364334887}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
   m_Colors:
@@ -4850,12 +4850,11 @@ MonoBehaviour:
   buttonTextVisualisers:
   - {fileID: 1387214160}
   - {fileID: 1677972340}
-  - {fileID: 904666519}
+  - {fileID: 1017157895}
   - {fileID: 1364334885}
+  - {fileID: 904666519}
   - {fileID: 590214075}
   - {fileID: 122485241}
-  - {fileID: 122485241}
-  - {fileID: 1017157895}
   allcanvasGroups:
   - {fileID: 1124623327}
   - {fileID: 1116256498}
@@ -4938,10 +4937,11 @@ MonoBehaviour:
   timeRemainingMask: {fileID: 1006558671}
   standardColour: {r: 0.13725491, g: 0.13725491, b: 0.13725491, a: 1}
   warningColour: {r: 0.9245283, g: 0.42428493, b: 0.06541473, a: 1}
-  iminentColour: {r: 0.9150943, g: 0.24907275, b: 0.16834284, a: 1}
+  imminentColour: {r: 0, g: 0, b: 0, a: 0}
   scoreText: {fileID: 2051571397}
   pauseScoreString: 'Score:'
   pauseScoreText: {fileID: 1336061541}
+  gameOverText: {fileID: 1021496192}
   pauseInput:
     m_Name: Pause Input
     m_Type: 0
@@ -5047,12 +5047,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Hmmm y''know what? Not too shabby buddy!
-
-
-    You helped pack <color=#FA3029>8</color>
-    items needed for the trail. Maybe you shouldn''t go on the Oregon Trail and help
-    the next wagon!
+  m_text: '
 
 '
   m_isRightToLeft: 0
@@ -6070,7 +6065,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "Pack the \nnext wgaon?"
+  m_text: "Pack the \nnext wagon?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a9046bbf1bcd05a49a962084705d97e3, type: 2}
   m_sharedMaterial: {fileID: 7382378777050728334, guid: a9046bbf1bcd05a49a962084705d97e3, type: 2}
@@ -6853,12 +6848,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 904666521}
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -7084,12 +7079,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
     m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
+    m_SelectOnRight: {fileID: 1677972336}
   m_Transition: 2
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
@@ -8277,11 +8272,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnLeft: {fileID: 1387214157}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 2
   m_Colors:
@@ -9298,7 +9293,7 @@ MonoBehaviour:
   m_MoveRepeatRate: 0.1
   m_ActionsAsset: {fileID: -944628639613478452, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
   m_PointAction: {fileID: 9037890269603851672, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
-  m_MoveAction: {fileID: 7610026918446424446, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
+  m_MoveAction: {fileID: 7782517007764866932, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
   m_SubmitAction: {fileID: -5114928293758694829, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
   m_CancelAction: {fileID: 7644141395824549865, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
   m_LeftClickAction: {fileID: 9132500955671775879, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
@@ -9307,7 +9302,7 @@ MonoBehaviour:
   m_ScrollWheelAction: {fileID: 5014110705263683649, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
   m_TrackedDevicePositionAction: {fileID: 7610026918446424446, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
   m_TrackedDeviceOrientationAction: {fileID: 2183484146581459599, guid: cbbcd41665a1c3243b37f0c7441424ce, type: 3}
-  m_DeselectOnBackgroundClick: 1
+  m_DeselectOnBackgroundClick: 0
   m_PointerBehavior: 0
 --- !u!114 &1986330099
 MonoBehaviour:
@@ -9321,7 +9316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1677972334}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1986330100
