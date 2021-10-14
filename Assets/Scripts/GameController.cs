@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using TMPro;
@@ -22,6 +23,11 @@ public class GameController : MonoBehaviour
     int score;
     [SerializeField]
     float timeRemaining = 10;
+
+    [Space(5)]
+
+    [SerializeField]
+    internal UnityEvent onScoreChange;
 
     [Header("Item Handler")]
     [SerializeField]
@@ -50,6 +56,22 @@ public class GameController : MonoBehaviour
     [SerializeField]
     Color iminentColour;
 
+    [Header("UI - Score")]
+    [SerializeField]
+    TextMeshProUGUI scoreText;
+
+    [Space(10)]
+
+    [SerializeField]
+    string pauseScoreString = "Score:";
+    [SerializeField]
+    TextMeshProUGUI pauseScoreText;
+
+    [Space(10)]
+
+    [SerializeField]
+    TextMeshProUGUI gameOverText;
+
     [Header("Inputs")]
     [SerializeField]
     InputAction pauseInput;
@@ -70,8 +92,10 @@ public class GameController : MonoBehaviour
     {
         SetupInput();
         SpawnItem();
-
+        onScoreChange.AddListener(delegate { UpdateScoreVisualGameplay(); });
+        onScoreChange.AddListener(delegate { UpdateScoreVisualPause(); });
     }
+
 
     public void BeginCountdown()
     {
@@ -270,7 +294,7 @@ public class GameController : MonoBehaviour
     void SetTimeColour(Color color)
     {
         //Minimises the canvas needing to redraw due to the colour beingt changed itself
-        if(timeRemainingTextForeground.color != color)
+        if (timeRemainingTextForeground.color != color)
         {
             timeRemainingTextForeground.color = color;
         }
@@ -283,4 +307,27 @@ public class GameController : MonoBehaviour
             return gameFinished;
         }
     }
+
+    //Updates score, called when score changes - Listener on onScoreChange UnityEvent
+    void UpdateScoreVisualGameplay()
+    {
+        scoreText.text = score.ToString();
+    }
+
+    //Updates score in the pause menu, called when score changes - Listener on onScoreChange UnityEvent
+    void UpdateScoreVisualPause()
+    {
+        pauseScoreText.text = pauseScoreString + " " + score.ToString();
+    }
+
+    //Updates the entire string. Dialogue currently hardcoded.
+    internal void UpdateScoreGameOver()
+    {
+        gameOverText.SetText("Hmmm y'know what? Not too shabby buddy!" + "<br> You helped pack < color =#FA3029>{0}</color> items needed for the trail. Maybe " +
+            "you shouldn't go on the Oregon Trail and help with the next wagon instead! ",score);
+    }
+
+
+
+
 }

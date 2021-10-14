@@ -248,6 +248,7 @@ public class UIHandler : MonoBehaviour
     public void GameOver()
     {
         SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.gameOverGameplay;
+        GameController.instance.UpdateScoreGameOver();
     }
 
     public void Tutorial()

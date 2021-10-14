@@ -11,6 +11,7 @@ public class ItemReceiver : MonoBehaviour
         {
             GameController.instance.currentItemObject.HaveAddedToScore = true;
             GameController.instance.AddedScore = points;
+            GameController.instance.onScoreChange.Invoke();
         }
        
     }

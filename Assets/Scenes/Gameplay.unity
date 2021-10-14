@@ -4910,6 +4910,9 @@ MonoBehaviour:
   pauseTimer: 0
   score: 0
   timeRemaining: 10
+  onScoreChange:
+    m_PersistentCalls:
+      m_Calls: []
   currentItemObject: {fileID: 0}
   itemPrefab: {fileID: 897843133868247432, guid: 57ff2a15bfaf0ca45bc25502d42e9756, type: 3}
   itemMatList:
@@ -4936,6 +4939,9 @@ MonoBehaviour:
   standardColour: {r: 0.13725491, g: 0.13725491, b: 0.13725491, a: 1}
   warningColour: {r: 0.9245283, g: 0.42428493, b: 0.06541473, a: 1}
   iminentColour: {r: 0.9150943, g: 0.24907275, b: 0.16834284, a: 1}
+  scoreText: {fileID: 2051571397}
+  pauseScoreString: 'Score:'
+  pauseScoreText: {fileID: 1336061541}
   pauseInput:
     m_Name: Pause Input
     m_Type: 0
@@ -9398,8 +9404,8 @@ MonoBehaviour:
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4278190080
-  m_fontColor: {r: 0, g: 0, b: 0, a: 1}
+    rgba: 4293848814
+  m_fontColor: {r: 0.9339623, g: 0.9339623, b: 0.9339623, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
