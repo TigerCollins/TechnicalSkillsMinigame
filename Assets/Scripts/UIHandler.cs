@@ -5,6 +5,7 @@ using UnityEngine.UI;
 using UnityEngine.EventSystems;
 using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
+using MoreMountains.Feedbacks;
 
 
 
@@ -34,7 +35,10 @@ public class UIHandler : MonoBehaviour
      [SerializeField]
     CanvasGroupDetails gameplayCanvasGroup;
 
-   
+    [Header("FEELS Feedbacks")]
+    [SerializeField]
+    internal MMFeedbacks flashFeedback;
+
 
     //Called before start (game object does not need to be active)
     public void Awake()
@@ -57,8 +61,6 @@ public class UIHandler : MonoBehaviour
     {
             SetMenu();
     }
-
-   
 
     public void SetMenu()
     {

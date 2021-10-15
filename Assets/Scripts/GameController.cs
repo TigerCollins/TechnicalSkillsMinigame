@@ -23,6 +23,8 @@ public class GameController : MonoBehaviour
     int score;
     [SerializeField]
     float timeRemaining = 10;
+    [SerializeField]
+    float baseCountdownTime = 10;
 
     [Space(5)]
 
@@ -178,7 +180,7 @@ public class GameController : MonoBehaviour
     {
         get
         {
-            return (int)Mathf.Round(timeRemaining);
+            return (int)Mathf.Ceil(timeRemaining);
         }
 
         set
@@ -189,6 +191,9 @@ public class GameController : MonoBehaviour
             //Set the Text string when whole number changed
             timeRemainingTextForeground.text = newVal.ToString();
             timeRemainingTextBackground.text = newVal.ToString();
+
+            //Sets the text Colour (argument needs to be whole number for switch)
+            TimeRemainingTextColour(newVal);
         }
     }
 
@@ -202,13 +207,12 @@ public class GameController : MonoBehaviour
         set
         {
             //Clamps the time remaining from going below 0
-            timeRemaining = Mathf.Clamp(value, 0, 10);
+            timeRemaining = Mathf.Clamp(value, 0, baseCountdownTime);
         }
     }
 
     internal IEnumerator GameCountdown()
     {
-        float timeProgressed = 0;
         //Pauses coroutine when bool changes
         while (pauseTimer)
         {
@@ -218,26 +222,27 @@ public class GameController : MonoBehaviour
         //When coroutine isn't paused and timer is above 0, run this
         while (TimeFloat > 0)
         {
-            //Set the Text string
-            TimeWholeNumbers = (int)Mathf.Round(TimeFloat);
-
-            //Sets the text Colour (argument needs to be whole number for switch)
-            TimeRemainingTextColour(TimeWholeNumbers);
+            //Set the Text string and foreground text colour
+            TimeWholeNumbers = (int)Mathf.Ceil(TimeFloat);
 
             //Sets the Time remaining mask fill
-            timeRemainingMask.fillAmount = Mathf.Round((TimeFloat / 10) * 10.0f) * 0.1f;
+            timeRemainingMask.fillAmount = TimeWholeNumbers / baseCountdownTime;
 
             //Sets the time (scaled with time so pausing takes affect)
             TimeFloat -= Time.deltaTime;
-            timeProgressed += Time.deltaTime;
 
             yield return null;
         }
 
+        //Triggers screen flash when time displays as 0 (0 should occur when while loop completes)
+        UIHandler.instance.flashFeedback.PlayFeedbacks();
 
-        //Stops game (interactions for points and dragging items)
+        //Forces timer to be 0 visually.
+        timeRemainingMask.fillAmount = 0;
         timeRemainingTextForeground.text = TimeWholeNumbers.ToString();
         timeRemainingTextBackground.text = TimeWholeNumbers.ToString();
+
+        //Stops game (interactions for points and dragging items)
         gameFinished = true;
         yield return new WaitForSeconds(1f);
 
@@ -292,7 +297,7 @@ public class GameController : MonoBehaviour
 
     void SetTimeColour(Color color)
     {
-        //Minimises the canvas needing to redraw due to the colour beingt changed itself
+        //Minimises the canvas needing to redraw due to the colour being changed itself
         if (timeRemainingTextForeground.color != color)
         {
             timeRemainingTextForeground.color = color;
