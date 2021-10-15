@@ -38,7 +38,7 @@ public class GameController : MonoBehaviour
     [SerializeField]
     GameObject itemPrefab;
     [SerializeField]
-    List<Material> itemMatList;
+    List<ItemMaterial> itemMat;
     [SerializeField]
     List<Transform> itemSpawnPoints;
 
@@ -130,7 +130,9 @@ public class GameController : MonoBehaviour
     {
         //Makes local variables randomly choosing a mat and spawn point within the list
         Transform selectedSpawnPoint = itemSpawnPoints[Random.Range(0, itemSpawnPoints.Count)];
-        Material selectedMat = itemMatList[Random.Range(0, itemMatList.Count)];
+        int randomNum = Random.Range(0, itemMat.Count);
+        Material selectedMat = itemMat[randomNum].itemMaterial;
+        Material glowMat = itemMat[randomNum].glowMaterial;
 
         //Destroys current object if passed through as an argument
         if (currentObject != null)
@@ -144,7 +146,7 @@ public class GameController : MonoBehaviour
         {
             item.transform.position = selectedSpawnPoint.transform.position;
             item.transform.localScale = selectedSpawnPoint.transform.localScale;
-            item.SetMaterial(selectedMat);
+            item.SetMaterial(selectedMat,glowMat);
             currentItemObject = item;
         }
     }
@@ -345,6 +347,11 @@ public class GameController : MonoBehaviour
 
         SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.normalGameplay;
     }
+}
 
-
+[System.Serializable]
+public class ItemMaterial
+{
+    public Material itemMaterial;
+    public Material glowMaterial;
 }

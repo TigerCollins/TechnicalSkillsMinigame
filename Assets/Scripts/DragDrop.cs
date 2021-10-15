@@ -86,6 +86,13 @@ public class DragDrop : MonoBehaviour
             //Drops object (position)
             target.transform.position = curPosition - (pickupOffset / dropDivider);
 
+            //Disables item glow if the game is finished and the force drop occurs
+            if(GameController.instance.IsGameComplete)
+            {
+                GameController.instance.currentItemObject.ItemGlow(false);
+            }
+           
+
             //Sets held items held state to false, allowing AddPoints function to be called on the ItemReceiver component
             GameController.instance.currentItemObject.CurrentlyHeld = false;
 
@@ -105,4 +112,6 @@ public class DragDrop : MonoBehaviour
         }
         return target;
     }
+
+
 }

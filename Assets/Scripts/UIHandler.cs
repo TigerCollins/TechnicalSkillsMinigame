@@ -296,3 +296,5 @@ public class CanvasGroupDetails
     public CanvasGroup canvasGroup;
     public Button firstButton;
 }
+
+
