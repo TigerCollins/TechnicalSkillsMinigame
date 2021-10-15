@@ -12,7 +12,7 @@ public class SceneLinker : MonoBehaviour
 
     [Header("Target Menu")]
     [SerializeField]
-    bool _checkGameStateEveryFrame = false;
+    bool _checkGameStateEveryFrame = false; //Set true when debugging using the inspector, as general gameplay should NOT rely on Update to change the menu
     [SerializeField]
     TargetGameState targetGameState;
 
@@ -20,9 +20,6 @@ public class SceneLinker : MonoBehaviour
 
     [SerializeField]
     UnityEvent OnTargetGameStateChange; //Functions by programmers can be added by programmers, designers and others can add via inspector
-
- 
-
 
     //Hidden
     TargetGameState previousTargetState;
@@ -61,6 +58,13 @@ public class SceneLinker : MonoBehaviour
         OnTargetGameStateChange.AddListener(delegate { TargetGameStateActivater(); });
     }
 
+
+    /// <summary>
+    /// This function is merely a switch that changes scenes according to the enum.
+    /// Each case contains an if statement to avoid loading the already active scene.
+    /// 
+    /// At the end of the switch, SetMenu from the UIHandler is called to open the desired menu according to the enum
+    /// </summary>
     public void TargetGameStateActivater()
     {
         switch (targetGameState)
@@ -119,6 +123,8 @@ public class SceneLinker : MonoBehaviour
         }
     }
 
+
+    //Get Set is setup so other components can reference the game state enum and when set, the UnityEvent is invoked so designers do not need to interact too much with code.
     protected internal TargetGameState GameStateDestination
     {
         get

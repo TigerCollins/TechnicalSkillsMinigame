@@ -43,7 +43,7 @@ public class UIHandler : MonoBehaviour
     //Called before start (game object does not need to be active)
     public void Awake()
     {
-        //If statement destroys this component if the instance already exists, stops multiple static instances
+        //The if statement destroys this component if the instance already exists, stops multiple static instances
         if(instance ==null)
         {
             instance = this;
@@ -62,6 +62,9 @@ public class UIHandler : MonoBehaviour
             SetMenu();
     }
 
+    //This function is a switch that sets the alpha, interactable and raycast state of each of the canvas groups in the game scene. 
+    //The switch also changes the button selected. 
+    //Switch is used so fucnitons/variables can be affected depending on the switch argument (ie; change time scale when paused/playing)
     public void SetMenu()
     {
         switch (SceneLinker.instance.GameStateDestination)
@@ -217,6 +220,9 @@ public class UIHandler : MonoBehaviour
         }
     }
 
+
+    //This function sets the selected button component. Called when a game menu state is changed.
+    //If the argument is null, no UI element is selected - stops null reference.
     public void ChangeButtonSelection(Button button)
     {
         if(button!=null)
@@ -231,10 +237,13 @@ public class UIHandler : MonoBehaviour
        
     }
 
+
+    /// <summary>
+    /// The following functions named after game state enums are so they can be easily called and used within inspector UnityEvents
+    /// </summary>
     public void StartGameFirstTime()
     {
         SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.firstTimeGameplay;
-        
     }
 
     public void Gameplay()

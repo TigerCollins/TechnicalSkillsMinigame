@@ -33,6 +33,10 @@ public class ButtonTextVisualiser : MonoBehaviour
     /// Purpose of this script is to handle visuals with the Unity 
     /// Button component. The script can find null references and 
     /// warn other developers of the missing component for debugging.
+    /// 
+    /// This script is to work in conjuction with the Unity Button component,
+    /// to save time making my own button component from scratch and keeping
+    /// the visualiser performant.
     /// </summary>
 
     private void Start()
@@ -145,7 +149,8 @@ public class ButtonTextVisualiser : MonoBehaviour
     }
 
 
-    //This function is called via the Unity inspector. It will start the TextColourCountdown coroutine and change the color to unselected after the desired time
+    //This function is called via the Unity inspector. It will start the TextColourCountdown coroutine and change the color to unselected after the desired time.
+    //This function is intended to be used when keyboard input is used and a 'up' listener cannot be used.
     public void UnselectColourCountdown()
     {
         StartCoroutine(TextColourCountdown(_unselectedColour));
