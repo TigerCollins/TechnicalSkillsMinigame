@@ -22,6 +22,8 @@ public class Item : MonoBehaviour
     bool addedToScore;
     [SerializeField]
     bool currentlyHeld;
+    [SerializeField]
+    bool currentlyOverWagon;
 
     ItemReceiver itemReceiver;
 
@@ -61,12 +63,14 @@ public class Item : MonoBehaviour
                 addedToScore = true;
                 receiver.AddPoints(scoreValue);
                 receiver.WagonGlow(false);
+                currentlyOverWagon = false;
             }
 
             //If the item is being held over the wagon
             else
             {
                 receiver.WagonGlow(true);
+                currentlyOverWagon = true;
             }
         } 
     }
@@ -76,6 +80,7 @@ public class Item : MonoBehaviour
         //Disables wagon glow if the held item leaves the wagon - Doesnt check if held by player
         if(itemReceiver != null)
         {
+            currentlyOverWagon = false;
             itemReceiver.WagonGlow(false);
             itemReceiver = null;
         }
@@ -99,6 +104,14 @@ public class Item : MonoBehaviour
         set
         {
             currentlyHeld = value;
+        }
+    }
+
+    internal bool CurrentlyOverWagon
+    {
+        get
+        {
+            return currentlyOverWagon;
         }
     }
 

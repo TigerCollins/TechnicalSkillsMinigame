@@ -14,6 +14,8 @@ public class ButtonTextVisualiser : MonoBehaviour
     [SerializeField]
     Button _button;
     [SerializeField]
+    Slider _slider;
+    [SerializeField]
     GameObject _buttonSelect;
     bool _isSelected;
 
@@ -90,15 +92,20 @@ public class ButtonTextVisualiser : MonoBehaviour
     //Used with EventTrigger, bool can be modified in the inspector to modify text colour
     public void IsSelected(bool selectState)
     {
-        if (selectState && _canModifyTextColour)
+        //Checking if button text isnt null to avoid null references
+        if(_buttonText)
         {
-            _buttonText.color = _selectedColour;
-        }
+            if (selectState && _canModifyTextColour)
+            {
+                _buttonText.color = _selectedColour;
+            }
 
-        else if(_canModifyTextColour)
-        {
-            _buttonText.color = _unselectedColour;
+            else if (_canModifyTextColour)
+            {
+                _buttonText.color = _unselectedColour;
+            }
         }
+       
     }
 
     //Hides/Shows the pointer selector depending on bool
@@ -117,7 +124,16 @@ public class ButtonTextVisualiser : MonoBehaviour
         PointerCheck(selectState);
 
         //Selects UI element and triggers the select event
-        _button.Select();
+        if(_button)
+        {
+            _button.Select();
+        }
+
+        else if(_slider)
+        {
+            _slider.Select();
+        }
+        
     }
 
     //Used with EventTrigger (specifically on select), bool can be modified in the inspector to modify activate state

@@ -23,6 +23,10 @@ public class DragDrop : MonoBehaviour
     [SerializeField]
     float dropDivider = 2.5f; //When dropping items, the offset is divided but this value
 
+    [Header("Audio")]
+    [SerializeField]
+    AudioLibrary audioLibrary;
+
 
     // Use this for initialization
     void Start()
@@ -69,6 +73,9 @@ public class DragDrop : MonoBehaviour
 
                 //Sets held items held state to tru, stopping the AddPoints function from being called
                 GameController.instance.currentItemObject.CurrentlyHeld = true;
+
+                //Triggers audio 
+                    AudioPlayer.instance.PlaySoundEffect(audioLibrary.itemPickUp);
             }
         }
        
@@ -91,6 +98,17 @@ public class DragDrop : MonoBehaviour
             {
                 GameController.instance.currentItemObject.ItemGlow(false);
             }
+
+            //Triggers audio 
+            if (GameController.instance.currentItemObject.CurrentlyOverWagon)
+            {
+                AudioPlayer.instance.PlaySoundEffect(audioLibrary.itemPacked);
+            }
+
+            else
+            {
+                AudioPlayer.instance.PlaySoundEffect(audioLibrary.itemDrop);
+            }
            
 
             //Sets held items held state to false, allowing AddPoints function to be called on the ItemReceiver component
@@ -112,6 +130,7 @@ public class DragDrop : MonoBehaviour
         }
         return target;
     }
+
 
 
 }
