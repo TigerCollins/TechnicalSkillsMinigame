@@ -70,40 +70,40 @@ public class SceneLinker : MonoBehaviour
         switch (targetGameState)
         {
             case TargetGameState.normalGameplay:
-                if (SceneManager.GetActiveScene().buildIndex != 1)
+                if (SceneManager.GetActiveScene().buildIndex != 2)
                 {
-                    SceneManager.LoadSceneAsync(1);
+                    SceneManager.LoadSceneAsync(2);
                 }
                 break;
             case TargetGameState.firstTimeGameplay:
-                if(SceneManager.GetActiveScene().buildIndex != 1)
+                if(SceneManager.GetActiveScene().buildIndex != 2)
                 {
-                    SceneManager.LoadSceneAsync(1);
+                    SceneManager.LoadSceneAsync(2);
                 }
                 
                 break;
             case TargetGameState.tutorialGameplay:
-                if (SceneManager.GetActiveScene().buildIndex != 1)
+                if (SceneManager.GetActiveScene().buildIndex != 2)
                 {
-                    SceneManager.LoadSceneAsync(1);
+                    SceneManager.LoadSceneAsync(2);
                 }
                 break;
             case TargetGameState.pauseGameplay:
-                if (SceneManager.GetActiveScene().buildIndex != 1)
+                if (SceneManager.GetActiveScene().buildIndex != 2)
                 {
-                    SceneManager.LoadSceneAsync(1);
+                    SceneManager.LoadSceneAsync(2);
                 }
                 break;
             case TargetGameState.gameOverGameplay:
-                if (SceneManager.GetActiveScene().buildIndex != 1)
+                if (SceneManager.GetActiveScene().buildIndex != 2)
                 {
-                    SceneManager.LoadSceneAsync(1);
+                    SceneManager.LoadSceneAsync(2);
                 }
                 break;
             case TargetGameState.mainMenu:
-                if (SceneManager.GetActiveScene().buildIndex != 0)
+                if (SceneManager.GetActiveScene().buildIndex != 1)
                 {
-                    SceneManager.LoadSceneAsync(0);
+                    SceneManager.LoadSceneAsync(1);
                 }
                 break;
             default:

@@ -74,7 +74,7 @@ public class UIHandler : MonoBehaviour
         {
             case SceneLinker.TargetGameState.normalGameplay:
                 Time.timeScale = 1;
-                GameController.instance.pauseTimer = false;
+               
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
                     if(gameplayCanvasGroup != null)
@@ -97,12 +97,13 @@ public class UIHandler : MonoBehaviour
                 ChangeButtonSelection(gameplayCanvasGroup.firstButton);
                 if(GameController.instance != null)
                 {
+                    GameController.instance.pauseTimer = false;
                     GameController.instance.BeginCountdown();
                 }
                
                 break;
             case SceneLinker.TargetGameState.firstTimeGameplay:
-                GameController.instance.pauseTimer = true;
+               
                 Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -123,10 +124,14 @@ public class UIHandler : MonoBehaviour
                         }
                     }
                 }
+                if (GameController.instance != null)
+                {
+                    GameController.instance.pauseTimer = true;
+                }
                 ChangeButtonSelection(firstTimeCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.tutorialGameplay:
-                GameController.instance.pauseTimer = true;
+              
                 Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -147,10 +152,14 @@ public class UIHandler : MonoBehaviour
                         }
                     }
                 }
+                if (GameController.instance != null)
+                {
+                    GameController.instance.pauseTimer = true;
+                }
                 ChangeButtonSelection(tutorialCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.pauseGameplay:
-                GameController.instance.pauseTimer = true;
+               
                 Time.timeScale = 0;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -170,11 +179,14 @@ public class UIHandler : MonoBehaviour
                             pauseCanvasGroup.canvasGroup.interactable = true;
                         }
                     }
+                    if (GameController.instance != null)
+                    {
+                        GameController.instance.pauseTimer = true;
+                    }
                     ChangeButtonSelection(pauseCanvasGroup.firstButton);
                 }
                 break;
             case SceneLinker.TargetGameState.gameOverGameplay:
-                GameController.instance.pauseTimer = false;
                 Time.timeScale = 1;
                 foreach (CanvasGroup item in allcanvasGroups)
                 {
@@ -195,6 +207,10 @@ public class UIHandler : MonoBehaviour
                         }
                     }
                 }
+                 if (GameController.instance != null)
+                    {
+                         GameController.instance.pauseTimer = true;
+                    }
                 ChangeButtonSelection(gameOverCanvasGroup.firstButton);
                 break;
             case SceneLinker.TargetGameState.mainMenu:

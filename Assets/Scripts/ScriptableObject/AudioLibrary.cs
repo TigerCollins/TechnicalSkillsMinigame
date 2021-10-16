@@ -1,29 +1,29 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Audio;
 
 
 [CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/Audio Library", order = 1)]
 public class AudioLibrary : ScriptableObject
 {
     /// <summary>
-    /// The AudioLibrary object is setup to minimise singletons. This is one of the last components made for the technical quiz
-    /// and the use of singletons was hire than desired. 
-    /// 
-    /// To use the audio library correctly, reference the ScriptableObject on the component that references it.
+    /// The AudioLibrary object is setup to minimise singletons and serve as a injection dependence. With prior planning, scriptable objects would have been utitlised to
+    /// alleviate singletons and monobehaviour overhead
     /// </summary>
 
     [Header("Functionality")]
+    [SerializeField]
+    AudioMixer audioMixer;
     [Range(0,10)]
     [SerializeField]
-    int volume;
-
-    [Space(10)]
-
+    float masterVolume = 5;
+    [Range(0, 10)]
     [SerializeField]
-    AudioSource soundtrackSource;
+    int sfxVolume = 6;
+    [Range(0, 10)]
     [SerializeField]
-    AudioSource sfxSource;
+    int musicVolume = 3;
 
     [Header("Soundtracks")]
     public AudioClip mainSoundtrack;
@@ -32,27 +32,58 @@ public class AudioLibrary : ScriptableObject
     public AudioClip buttonHover;
     public AudioClip buttonClick;
 
-    public void PlaySoundtrack(AudioClip track)
-    {
-        soundtrackSource.clip = track;
-        soundtrackSource.Play();
-    }
+    [Space(5)]
 
-    public void PlaySoundEffect(AudioClip sfx)
-    {
-        sfxSource.PlayOneShot(sfx);
-    }
+    public AudioClip itemPickUp;
+    public AudioClip itemDrop;
+    public AudioClip itemPacked;
 
-    public int Volume
+    [Space(5)]
+
+    public AudioClip scoreChange;
+    public AudioClip timeChange;
+
+    [Space(5)]
+
+    public AudioClip timeEnd;
+
+    public float MasterVolume
     {
         get
         {
-            return volume;
+            return masterVolume;
         }
 
         set
         {
-            volume = Mathf.Clamp(value, 0, 10);
+            masterVolume = Mathf.Clamp(value, 0, 10);
+
+            //Sets and saves volume between scenes and lasts through the application being closed/opened
+            PlayerPrefs.SetFloat("MasterVolume", masterVolume);
+        }
+    }
+
+    public int SFXVolume
+    {
+        get
+        {
+            return sfxVolume;
+        }
+    }
+
+    public int MusicVolume
+    {
+        get
+        {
+            return musicVolume;
+        }
+    }
+
+    public AudioMixer ActiveAudioMixer
+    {
+        get
+        {
+            return audioMixer;
         }
     }
 }

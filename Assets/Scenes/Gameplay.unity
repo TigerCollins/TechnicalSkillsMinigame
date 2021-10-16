@@ -123,6 +123,133 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &32387363
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 32387365}
+  - component: {fileID: 32387364}
+  m_Layer: 0
+  m_Name: Soundtrack Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &32387364
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32387363}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -2231405384683103403, guid: 0ae492211dfa97049b0bd9372a4d1030, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 1
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &32387365
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 32387363}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1402290298}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &36758508
 GameObject:
   m_ObjectHideFlags: 0
@@ -198,6 +325,133 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 36758508}
   m_CullTransparentMesh: 1
+--- !u!1 &83031354
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 83031356}
+  - component: {fileID: 83031355}
+  m_Layer: 0
+  m_Name: SFX Source
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!82 &83031355
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83031354}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: -586471343338945727, guid: 0ae492211dfa97049b0bd9372a4d1030, type: 2}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+--- !u!4 &83031356
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 83031354}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1402290298}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &84361735
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +690,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 530114939}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -470,6 +725,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -478,6 +745,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -521,6 +800,18 @@ MonoBehaviour:
         - m_Target: {fileID: 122485241}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayPressSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -593,6 +884,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1021460994}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: QuitToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1543,6 +1846,7 @@ GameObject:
   - component: {fileID: 279456905}
   - component: {fileID: 279456907}
   - component: {fileID: 279456906}
+  - component: {fileID: 279456908}
   m_Layer: 0
   m_Name: TimeEnd
   m_TagString: Untagged
@@ -1616,6 +1920,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Feedbacks:
   - {fileID: 279456906}
+  - {fileID: 279456908}
   InitializationMode: 2
   SafeMode: 3
   Direction: 0
@@ -1646,6 +1951,63 @@ MonoBehaviour:
       m_PersistentCalls:
         m_Calls: []
   DebugActive: 0
+--- !u!114 &279456908
+MonoBehaviour:
+  m_ObjectHideFlags: 2
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279456904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 23a102c1a91e34644aa37f1e4f00c31a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Active: 1
+  Label: Events
+  Chance: 100
+  Timing:
+    TimescaleMode: 0
+    InitialDelay: 0
+    CooldownDuration: 0
+    NumberOfRepeats: 0
+    RepeatForever: 0
+    DelayBetweenRepeats: 1
+    MMFeedbacksDirectionCondition: 0
+    PlayDirection: 0
+    ConstantIntensity: 0
+    UseIntensityInterval: 0
+    IntensityIntervalMin: 0
+    IntensityIntervalMax: 0
+    Sequence: {fileID: 0}
+    TrackID: 0
+    Quantized: 0
+    TargetBPM: 120
+  DebugActive: 0
+  PlayEvents:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayTimeEndSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  StopEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  InitializationEvents:
+    m_PersistentCalls:
+      m_Calls: []
+  ResetEvents:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &286777778
 GameObject:
   m_ObjectHideFlags: 0
@@ -2746,6 +3108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 1140736692}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -2780,6 +3143,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -2788,6 +3163,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2831,6 +3218,18 @@ MonoBehaviour:
         - m_Target: {fileID: 590214075}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayPressSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -2903,6 +3302,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1021460996}
         m_TargetAssemblyTypeName: GameController, Assembly-CSharp
         m_MethodName: ResetMinigame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3880,6 +4291,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 1640643319}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -3914,6 +4326,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -3922,6 +4346,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -3965,6 +4401,18 @@ MonoBehaviour:
         - m_Target: {fileID: 904666519}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayPressSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4037,6 +4485,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1021460994}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: QuitToMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4518,7 +4978,7 @@ MonoBehaviour:
 
 
 
-    <color=#FA3029>Have you done this before?</color>'
+    <color=#FA3029>Is this your first time?</color>'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a9046bbf1bcd05a49a962084705d97e3, type: 2}
   m_sharedMaterial: {fileID: 7382378777050728334, guid: a9046bbf1bcd05a49a962084705d97e3, type: 2}
@@ -4778,6 +5238,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 1898159038}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -4812,6 +5273,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -4820,6 +5293,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4863,6 +5348,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1017157895}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayPressSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -4944,6 +5441,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1017157898
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4995,6 +5504,7 @@ GameObject:
   - component: {fileID: 1021460994}
   - component: {fileID: 1021460996}
   - component: {fileID: 1021460995}
+  - component: {fileID: 1021460997}
   m_Layer: 0
   m_Name: ScriptController
   m_TagString: Untagged
@@ -5095,6 +5605,7 @@ MonoBehaviour:
   curPosition: {x: 0, y: 0, z: 0}
   pickupOffset: {x: 0, y: 8, z: 0}
   dropDivider: 2.5
+  audioLibrary: {fileID: 11400000, guid: f5cf383838af2b9408f6b1c2d04bc467, type: 2}
 --- !u!114 &1021460996
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5107,6 +5618,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd955b53adc17434a8dc72809d0735b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  audioLibrary: {fileID: 11400000, guid: f5cf383838af2b9408f6b1c2d04bc467, type: 2}
   gameFinished: 0
   pauseTimer: 0
   score: 0
@@ -5146,6 +5658,8 @@ MonoBehaviour:
   timeRemainingTextBackground: {fileID: 2086132824}
   timeRemainingTextForeground: {fileID: 1087225880}
   timeRemainingMask: {fileID: 1006558671}
+  standardColourThreshold: 0.5
+  warningColourThreshold: 0.3
   standardColour: {r: 0.13725491, g: 0.13725491, b: 0.13725491, a: 1}
   warningColour: {r: 0.9245283, g: 0.42428493, b: 0.06541473, a: 1}
   imminentColour: {r: 0.8396226, g: 0.19406372, b: 0.19406372, a: 1}
@@ -5201,6 +5715,19 @@ MonoBehaviour:
       m_Groups: 
       m_Action: Mouse Pos
       m_Flags: 0
+--- !u!114 &1021460997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1021460991}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9e3e5f703770f54a91f337d1799f136, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLibrary: {fileID: 11400000, guid: f5cf383838af2b9408f6b1c2d04bc467, type: 2}
 --- !u!1 &1021496190
 GameObject:
   m_ObjectHideFlags: 0
@@ -6936,6 +7463,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 352541836}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -6970,6 +7498,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -6978,6 +7518,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7021,6 +7573,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1364334885}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayPressSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7093,6 +7657,18 @@ MonoBehaviour:
       - m_Target: {fileID: 1021460994}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
         m_MethodName: Gameplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7323,7 +7899,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1021460994}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: Gameplay
+        m_MethodName: Tutorial
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7385,6 +7973,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 678359639}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -7419,6 +8008,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -7427,6 +8028,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -7470,6 +8083,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1387214160}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -7652,6 +8277,54 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1402013577}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &1402290296
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1402290298}
+  - component: {fileID: 1402290297}
+  m_Layer: 0
+  m_Name: Audio
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1402290297
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402290296}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2440b32598e49cb429d11ff6286fbed1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  audioLibrary: {fileID: 11400000, guid: f5cf383838af2b9408f6b1c2d04bc467, type: 2}
+  soundtrackSource: {fileID: 32387364}
+  sfxSource: {fileID: 83031355}
+--- !u!4 &1402290298
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1402290296}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -42.737232, y: 40.837685, z: 49.78912}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 32387365}
+  - {fileID: 83031356}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1413056348
 GameObject:
   m_ObjectHideFlags: 0
@@ -8780,7 +9453,19 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1021460994}
         m_TargetAssemblyTypeName: UIHandler, Assembly-CSharp
-        m_MethodName: Tutorial
+        m_MethodName: Gameplay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1021460997}
+        m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+        m_MethodName: PlayPressSFX
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -8842,6 +9527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _buttonText: {fileID: 0}
   _button: {fileID: 0}
+  _slider: {fileID: 0}
   _buttonSelect: {fileID: 1502340516}
   _canModifyTextColour: 1
   _deselectColourChangeCountdown: 0.1
@@ -8876,6 +9562,18 @@ MonoBehaviour:
             m_StringArgument: 
             m_BoolArgument: 1
           m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
   - eventID: 0
     callback:
       m_PersistentCalls:
@@ -8884,6 +9582,18 @@ MonoBehaviour:
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: PointerEnter
           m_Mode: 6
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayHoverSFX
+          m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
             m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -8927,6 +9637,18 @@ MonoBehaviour:
         - m_Target: {fileID: 1677972340}
           m_TargetAssemblyTypeName: ButtonTextVisualiser, Assembly-CSharp
           m_MethodName: UnselectColourCountdown
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 1
+          m_CallState: 2
+        - m_Target: {fileID: 1021460997}
+          m_TargetAssemblyTypeName: AudioTrigger, Assembly-CSharp
+          m_MethodName: PlayPressSFX
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}

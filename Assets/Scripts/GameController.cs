@@ -12,6 +12,11 @@ public class GameController : MonoBehaviour
     Coroutine countdownCoroutine;
 
     [SerializeField]
+    AudioLibrary audioLibrary;
+
+    [Space(5)]
+
+    [SerializeField]
     public readonly int maxScoreIncrease = 50;
     [SerializeField]
     bool gameFinished;
@@ -55,6 +60,18 @@ public class GameController : MonoBehaviour
     TextMeshProUGUI timeRemainingTextForeground;
     [SerializeField]
     Image timeRemainingMask;
+
+    [Space(5)]
+
+    [SerializeField]
+    [Range(0, 1)]
+    float standardColourThreshold = .5f;
+    [SerializeField]
+    [Range(0, 1)]
+    float warningColourThreshold = .3f;
+
+    [Space(5)]
+
     [SerializeField]
     Color standardColour;
     [SerializeField]
@@ -101,7 +118,9 @@ public class GameController : MonoBehaviour
         onScoreChange.AddListener(delegate { UpdateScoreVisualGameplay(); });
         onScoreChange.AddListener(delegate { UpdateScoreVisualPause(); });
         onScoreChange.AddListener(delegate { UIHandler.instance.scoreBounceFeedback.PlayFeedbacks(); });
+        onScoreChange.AddListener(delegate { AudioPlayer.instance.PlaySoundEffect(audioLibrary.scoreChange); });
         onTimeIntegerChange.AddListener(delegate { UIHandler.instance.timeBounceFeedback.PlayFeedbacks(); });
+        onTimeIntegerChange.AddListener(delegate { AudioPlayer.instance.PlaySoundEffect(audioLibrary.timeChange); });
     }
 
 
@@ -159,10 +178,14 @@ public class GameController : MonoBehaviour
         }
     }
 
+    ///
+
     protected internal int AddedScore
     {
         set
         {
+            
+
             //Score is clamped to avoid cheating.
             //The value being passed through is the score adding the new value
             //The min is the current score
@@ -262,48 +285,28 @@ public class GameController : MonoBehaviour
         UIHandler.instance.GameOver();
     }
 
-
-
     //Only changes text colour (visual)
     void TimeRemainingTextColour(int time)
     {
-        switch (time)
+        //Current time completion (in percent)
+        float percentage = time/baseCountdownTime;
+
+        //If above the threshold, display standard colour
+        if(percentage >= standardColourThreshold )
         {
-            case 10:
-                SetTimeColour(standardColour);
-                break;
-            case 9:
-                SetTimeColour(standardColour);
-                break;
-            case 8:
-                SetTimeColour(standardColour);
-                break;
-            case 7:
-                SetTimeColour(standardColour);
-                break;
-            case 6:
-                SetTimeColour(standardColour);
-                break;
-            case 5:
-                SetTimeColour(standardColour);
-                break;
-            case 4:
-                SetTimeColour(warningColour);
-                break;
-            case 3:
-                SetTimeColour(warningColour);
-                break;
-            case 2:
-                SetTimeColour(imminentColour);
-                break;
-            case 1:
-                SetTimeColour(imminentColour);
-                break;
-            case 0:
-                SetTimeColour(imminentColour);
-                break;
-            default:
-                break;
+            SetTimeColour(standardColour);
+        }
+
+        //If above the threshold, display warning colour
+        else if (percentage >= warningColourThreshold)
+        {
+            SetTimeColour(warningColour);
+        }
+
+        //Display imminent colour
+        else
+        {
+            SetTimeColour(imminentColour);
         }
     }
 
@@ -340,7 +343,7 @@ public class GameController : MonoBehaviour
     internal void UpdateScoreGameOver()
     {
         gameOverText.SetText("Hmmm y'know what? Not too shabby buddy!" + "<br><br>You helped pack a heap of supplies for the trail! You packed $<color=#FA3029>{0}</color> worth of items, what a score! Maybe " +
-            "you shouldn't go on the Oregon Trail and help with the next wagon instead! ",score);
+            "you shouldn't go on the Oregon Trail and help with the next wagon instead!",score);
     }
 
     public void ResetMinigame()

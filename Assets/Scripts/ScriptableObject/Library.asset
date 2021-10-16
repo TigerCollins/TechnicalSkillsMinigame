@@ -12,9 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdc6c64918bd82145b60f2ead9f37619, type: 3}
   m_Name: Library
   m_EditorClassIdentifier: 
-  volume: 0
-  soundtrackSource: {fileID: 0}
-  sfxSource: {fileID: 0}
-  mainSoundtrack: {fileID: 0}
-  buttonHover: {fileID: 0}
-  buttonClick: {fileID: 0}
+  masterVolume: 5
+  sfxVolume: 6
+  musicVolume: 3
+  mainSoundtrack: {fileID: 8300000, guid: 37333ae75e84ace499c5a05734fcd920, type: 3}
+  buttonHover: {fileID: 8300000, guid: 13a8f34906ab72f428f6b603596a3086, type: 3}
+  buttonClick: {fileID: 8300000, guid: 2a134809872a28f41a40f03d1792516f, type: 3}
+  itemPickUp: {fileID: 8300000, guid: 045b37413283f834097c32b2579294ca, type: 3}
+  itemDrop: {fileID: 8300000, guid: 1cbd417c685ec4e49a79a0802d675e6c, type: 3}
+  itemPacked: {fileID: 8300000, guid: 1fb2dc18915f9dc48a73c7ca417f8d7c, type: 3}
+  scoreChange: {fileID: 8300000, guid: 055dd2dbb66659b428e7b827de0978f6, type: 3}
+  timeChange: {fileID: 8300000, guid: 518a14e59ab730448b8ed786b490415d, type: 3}
+  timeEnd: {fileID: 8300000, guid: db3e2577b1a66224ea44875434e6b2f8, type: 3}
