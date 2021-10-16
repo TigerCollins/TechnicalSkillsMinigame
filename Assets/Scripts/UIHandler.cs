@@ -38,7 +38,10 @@ public class UIHandler : MonoBehaviour
     [Header("FEELS Feedbacks")]
     [SerializeField]
     internal MMFeedbacks flashFeedback;
-
+    [SerializeField]
+    internal MMFeedbacks scoreBounceFeedback;
+    [SerializeField]
+    internal MMFeedbacks timeBounceFeedback;
 
     //Called before start (game object does not need to be active)
     public void Awake()

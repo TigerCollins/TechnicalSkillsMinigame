@@ -25,11 +25,15 @@ public class GameController : MonoBehaviour
     float timeRemaining = 10;
     [SerializeField]
     float baseCountdownTime = 10;
+    int previousTimeInt;
+    int timeRemainingInt;
 
     [Space(5)]
 
     [SerializeField]
     internal UnityEvent onScoreChange;
+    [SerializeField]
+    internal UnityEvent onTimeIntegerChange;
 
     [Header("Item Handler")]
     [SerializeField]
@@ -96,6 +100,8 @@ public class GameController : MonoBehaviour
         SpawnItem();
         onScoreChange.AddListener(delegate { UpdateScoreVisualGameplay(); });
         onScoreChange.AddListener(delegate { UpdateScoreVisualPause(); });
+        onScoreChange.AddListener(delegate { UIHandler.instance.scoreBounceFeedback.PlayFeedbacks(); });
+        onTimeIntegerChange.AddListener(delegate { UIHandler.instance.timeBounceFeedback.PlayFeedbacks(); });
     }
 
 
@@ -185,15 +191,21 @@ public class GameController : MonoBehaviour
 
         set
         {
-            //The +1 compensates for the rounding down of the int struct
-            int newVal = value;
+            //Previous time int is required to run before the set. Functionality utilising it compares the two values and invokes the onTimeIntegerChange UnityEvent
+            previousTimeInt = timeRemainingInt;
+            timeRemainingInt = value;
 
             //Set the Text string when whole number changed
-            timeRemainingTextForeground.text = newVal.ToString();
-            timeRemainingTextBackground.text = newVal.ToString();
+            timeRemainingTextForeground.text = timeRemainingInt.ToString();
+            timeRemainingTextBackground.text = timeRemainingInt.ToString();
 
             //Sets the text Colour (argument needs to be whole number for switch)
-            TimeRemainingTextColour(newVal);
+            TimeRemainingTextColour(timeRemainingInt);
+
+            if(timeRemainingInt != previousTimeInt)
+            {
+                onTimeIntegerChange.Invoke();
+            }
         }
     }
 
@@ -347,8 +359,9 @@ public class GameController : MonoBehaviour
         Destroy(currentItemObject.gameObject);
         SpawnItem();
 
-        //Calls events
-        onScoreChange.Invoke();
+        //Resets visuals
+        UpdateScoreVisualPause();
+        UpdateScoreVisualGameplay();
 
         SceneLinker.instance.GameStateDestination = SceneLinker.TargetGameState.normalGameplay;
     }

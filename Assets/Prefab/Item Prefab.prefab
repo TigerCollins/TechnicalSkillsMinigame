@@ -180,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af15bbed45df90748b50998d5429e7bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  renderer: {fileID: 897843133868247542}
+  itemRenderer: {fileID: 897843133868247542}
   glowRenderer: {fileID: 7986257453772561667}
   glowObject: {fileID: 707727428241666632}
   scoreValue: 50
